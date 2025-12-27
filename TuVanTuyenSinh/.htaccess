@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Nếu bạn để code trong thư mục TuVanTuyenSinh, hãy bỏ chú thích dòng dưới:
+# RewriteBase /TuVanTuyenSinh/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Chuyển mọi request về index.php?url=...
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
